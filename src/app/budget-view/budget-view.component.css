@@ -1,0 +1,19 @@
+@keyframes body {
+    0%{background-color:cadetblue;}
+    25%{background-color:rgb(60, 6, 108);}
+    50%{background-color:rgb(18, 15, 158);}
+    75%{background-color:rgb(93, 5, 81);}
+    100%{background-color:rgb(8, 105, 59);}
+}
+body{
+    animation-name: body;
+    animation-duration: 5s;
+    animation-duration: alternate-reverse;
+    animation-iteration-count: infinite;
+}
+#border{
+    margin-top: 10vh;
+    height: 20vh;
+    justify-content: space-between;
+    background: linear-gradient(green, pink);
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body class="vh-100">
+    <div class="container"><br>
+        <h1 class="text-center text-light">Create Budget Category</h1><br>
+        <div class="row mt-2 " >
+            <div class="card col-lg-5 col-md-6 col-sm-10 bg-dark  mx-auto shadow mx-3 p-4" id="border"  ><br>
+                <p *ngIf="message!= ''" class="text-dark">{{message}}</p>
+                <input type="text" placeholder="Add title" class="text-light bg-transparent border-bottom border-0 inp" [(ngModel)]="title"><br>
+                <input type="text" placeholder=" Add budget amount"  class="text-light bg-transparent border-bottom border-0 inp" [(ngModel)]="amount"><br>
+                <input type="date" placeholder="Add date"  class=" text-dark bg-transparent border-bottom border-0 inp" [(ngModel)]="date"><br>
+                <button class="btn btn-outline-primary text-light  mx-5 mb-2" (click)="addcategory()" >Add</button>
+                <button class="btn btn-outline-primary text-light  mb-2 mx-5" routerLink="/details" style="font-size:larger;">View Category</button>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
