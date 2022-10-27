@@ -1,17 +1,17 @@
-@keyframes body {
+/* @keyframes body {
     0%{background-color:cadetblue;}
     25%{background-color:rgb(18, 15, 158);}
     50%{background-color:rgb(60, 6, 108);}
     75%{background-color:rgb(8, 105, 59);}
     100%{background-color:rgb(93, 5, 81);}
-}
+/* } */
 body{
     animation-name: body;
     animation-duration: 5s;
     animation-duration: alternate-reverse;
     animation-iteration-count: infinite;
 }
-#border{
+/* #border{
     margin-top: 10vh;
     background: linear-gradient(blue,red,green);
-}
+} */

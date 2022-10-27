@@ -6,20 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body class="vh-100">
+<body>
     <div class="container"><br>
-        <h1 class="text-center text-light">Create Budget Category</h1><br>
-        <div class="row mt-2 " >
-            <div class="card col-lg-5 col-md-6 col-sm-10 bg-dark  mx-auto shadow mx-3 p-4" id="border"  ><br>
-                <p *ngIf="message!= ''" class="text-dark">{{message}}</p>
-                <input type="text" placeholder="Add title" class="text-light bg-transparent border-bottom border-0 inp" [(ngModel)]="title"><br>
-                <input type="text" placeholder=" Add budget amount"  class="text-light bg-transparent border-bottom border-0 inp" [(ngModel)]="amount"><br>
-                <input type="date" placeholder="Add date"  class=" text-dark bg-transparent border-bottom border-0 inp" [(ngModel)]="date"><br>
-                <button class="btn btn-outline-primary text-light  mx-5 mb-2" (click)="addcategory()" >Add</button>
-                <button class="btn btn-outline-primary text-light  mb-2 mx-5" routerLink="/details" style="font-size:larger;">View Category</button>
+        <div class="row p-3">
+            <div class="col-6 shadow mx-auto" style="border-radius: 40px; background-image: url('/assets/images/images().jfif');background-repeat: no-repeat; background-size: cover;background-color: rgba(0, 0, 0, 0.3); background-blend-mode: color-burn;"><br>
+                <div class="p-3 mx-auto">
+                    <h1 class="text-center text-light">Create Budget Category</h1><br>
+                    <p *ngIf="message!= ''" class="text-dark">{{message}}</p>
+                <input type="text" placeholder="Add title" class="form-control mb-3" [(ngModel)]="title"><br>
+                <input type="text" placeholder=" Add budget amount"  class="form-control mb-3" [(ngModel)]="amount"><br>
+                <input type="date" placeholder="Add date"  class="form-control mb-3" [(ngModel)]="date"><br>
+                <button class="btn btn-primary  w-100 mb-3" (click)="addcategory()" >Add</button>
+                <button class="btn btn-primary w-100" routerLink="/details" style="font-size:larger;">View Category</button>
+                </div>
             </div>
         </div>
-    </div>
-    
+    </div>  
 </body>
 </html>

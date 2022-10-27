@@ -8,63 +8,74 @@
     <title>Document</title>
 </head>
 
-<body class="vh-100">
+<body>
     <div class="container">
-        <div class="row" id="row">
-            <div class=" col-lg-4 col-md-8 col-sm-4 mx-auto shadow" id="border"><br>
-                <div class="row p-5 mx-auto" >
-                    <div class="text-success">
-                        <!-- <h4 class="text-light">Welcome here Please signup</h4> -->
-                    </div>
-                    <div class="justify-content-center ">
+        <div class="row p-5">
+            <!-- col-lg-4 col-md-8 col-sm-4 -->
+            <div class="col-12 col-md-6 shadow mx-auto" style="border-radius: 40px; background-image: url('/assets/images/images().jfif');background-repeat: no-repeat; background-size: cover;background-color: rgba(0, 0, 0, 0.3); background-blend-mode: color-burn;"><br>
+                <div class="row shadow" style="border-radius: 40px;">
+                    <div class="col-10 mx-auto"  style="border-top-right-radius: 40px;border-bottom-right-radius: 40px;">
                         <form [formGroup]="userForm" (ngSubmit)="signUp()">
-                            <h1 class="text-primary text-center">SIGN UP</h1>
+                            <h1 class="text-light text-center">SIGN UP</h1>
                             <p class="text-danger">{{message}}</p>
 
                             <input type="text" class="form-control mb-2" placeholder="Full name"
-                                formControlName="full_name" 
-                                [class.is-valid]="userForm.get('full_name')?.valid"
+                                formControlName="full_name" [class.is-valid]="userForm.get('full_name')?.valid"
                                 [class.is-invalid]="userForm.get('full_name')?.invalid">
                             <div *ngIf="userForm.get('full_name')?.invalid && userForm.get('full_name')?.dirty">
-                                <span class="text-danger" [*ngIf="userForm.get('full_name').errors['required']"]>
+                                <span class="text-danger" *ngIf="userForm.get('full_name')?.errors['required']">
                                     Input can not be empty
                                 </span>
 
-                                <span class="text-danger" [*ngIf="userForm.get('full_name').errors['minlength']"]>
+                                <span class="text-danger" *ngIf="userForm.get('full_name').errors['minlength']">
                                     Minimium length is 10
                                 </span>
                             </div>
 
-
                             <input type="text" class="form-control mb-2" placeholder="Phone Number"
                                 formControlName="phone_no" [class.is-valid]="userForm.get('phone_no')?.valid"
                                 [class.is-invalid]="userForm.get('phone_no')?.invalid">
+                            <div *ngIf="userForm.get('phone_no')?.valid && userForm.get('phone_no')?.dirty">
+                                <span class="text-danger" *ngIf="userForm.get('address').errors['required']">
+                                    Must be +234
+                                </span>
+                            </div>
 
-                            <input type="text" class="form-control mb-2" placeholder="Address"
-                                formControlName="address"
+                            <input type="text" class="form-control mb-2" placeholder="Address" formControlName="address"
                                 [class.is-valid]="userForm.get('address')?.valid"
                                 [class.is-invalid]="userForm.get('address')?.invalid">
                             <div *ngIf="userForm.get('address')?.invalid && userForm.get('address')?.dirty">
-                                <span class="text-danger" [*ngIf="userForm.get('address').errors['required']"]>
+                                <span class="text-danger" *ngIf="userForm.get('address').errors['required']">
                                     Input can not be empty
                                 </span>
 
-                                <span class="text-danger" [*ngIf="userForm.get('address').errors['minlength']"]>
+                                <span class="text-danger" *ngIf="userForm.get('address').errors['minlength']">
                                     Minimium length is 7
                                 </span>
                             </div>
 
-                            <input type="text" class="form-control mb-2" placeholder="Email" formControlName="email">
+                            <input type="text" class="form-control mb-2" placeholder="Email" formControlName="email"
+                                [class.is-valid]="userForm.get('email')?.valid"
+                                [class.is-invalid]="userForm.get('email')?.invalid">
+                            <div *ngIf="userForm.get('password')?.invalid && userForm.get('password')?.dirty">
+                                <span class="text-danger" *ngIf="userForm.get('password').errors?.['pattern']">
+                                    Field cannot be empty
+                                </span>
+                            </div>
 
                             <input type="password" class="form-control mb-2" placeholder="Password"
-                                formControlName="password"
-                                [class.is-valid]="userForm.get('password')?.valid"
+                                formControlName="password" [class.is-valid]="userForm.get('password')?.valid"
                                 [class.is-invalid]="userForm.get('password')?.invalid">
-                                <span class="text-danger" *ngIf="userForm.get('password')?.errors?.['pattern']">
+                            <div *ngIf="userForm.get('password')?.invalid && userForm.get('password')?.dirty">
+                                <span class="text-danger" *ngIf="userForm.get('password').errors?.['pattern']">
                                     Field cannot be empty
-                                  </span>
-                            <p class="">You already have an account with us <b routerLink="/signin">SignIn</b> here</p>
-                            <button class="btn btn-outline-primary text-light mb-2 signup">Signup</button>
+                                </span>
+                                <span class="text-danger" *ngIf="userForm.get('password').errors['pattern']">
+                                    Must have character, capital, small and must be up to
+                                </span>
+                            </div>
+                            <button class="btn btn-primary mb-2 text-light w-100" >Signup</button>
+                            <p class="text-light">You already have an account with us <b routerLink="/signin">SignIn</b> here</p>
                         </form>
                     </div>
                 </div>
