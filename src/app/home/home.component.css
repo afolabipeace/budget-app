@@ -10,7 +10,7 @@
     animation-duration: 5s;
     animation-duration: alternate-reverse;
     animation-iteration-count: infinite; */
-    background-image: url('/assets/images/christmas tree.png');
+    /* background-image: url('/assets/images/christmas tree.png'); */
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;

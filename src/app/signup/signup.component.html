@@ -13,7 +13,7 @@
         <div class="row p-5">
             <!-- col-lg-4 col-md-8 col-sm-4 -->
             <div class="col-12 col-md-6 shadow mx-auto" style="border-radius: 40px; background-image: url('/assets/images/images().jfif');background-repeat: no-repeat; background-size: cover;background-color: rgba(0, 0, 0, 0.3); background-blend-mode: color-burn;"><br>
-                <div class="row shadow" style="border-radius: 40px;">
+                <div class="row shadow" style="border-radius: 40px;"> 
                     <div class="col-10 mx-auto"  style="border-top-right-radius: 40px;border-bottom-right-radius: 40px;">
                         <form [formGroup]="userForm" (ngSubmit)="signUp()">
                             <h1 class="text-light text-center">SIGN UP</h1>
@@ -75,7 +75,7 @@
                                 </span>
                             </div>
                             <button class="btn btn-primary mb-2 text-light w-100" >Signup</button>
-                            <p class="text-light">You already have an account with us <b routerLink="/signin">SignIn</b> here</p>
+                            <p class="text-light">You already have an account with us <b routerLink="/signin" style="cursor: pointer;">SignIn</b> here</p>
                         </form>
                     </div>
                 </div>

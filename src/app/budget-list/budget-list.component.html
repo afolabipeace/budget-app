@@ -45,9 +45,9 @@
         </div>
       </div>
     </div>
-  </div> -->
-  <!-- <h2>CSS Layout Float</h2>
-  <p>{{ budget.title }}</p> -->
+  </div>
+  <h2>CSS Layout Float</h2> -->
+  <!-- <p>{{ budget.title }}</p> -->
   
   <header style="padding: 4px; margin:2px;">
     <div class="grid-container" id="body">
@@ -90,29 +90,29 @@
     
     <article>
       <div class="" *ngIf="budget_array[id-1].items.length != 0">
-        <div class="shadow">
-            <table class="table text-dark">
-              <thead>
-                <tr>
-                    <th>S/N</th>
-                    <th>Budget</th>
-                    <th>Quantity</th>
-                    <th>Price</th>
-                    <th>Total</th>
-                    <th>Action</th>
-                    <th>Status</th>
-                </tr>
-              </thead>
-                <tbody>
-                    <tr *ngFor="let id = index ;let budget of budget_array[id-1].items">
-                        <td>{{ id+1 }}</td>
-                        <td>{{ budget.goods }}</td>    
-                        <td>{{ budget.quantity}}</td>  
-                        <td>{{ budget.price}}</td>  
-                        <td>{{ budget.price * budget.quantity}}</td>  
-                        <td><button class="btn btn-success" style="margin: auto;" (click)="edit(id)" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+    <table class="table">
+      <thead>
+        <tr>
+            <th>S/N</th>
+            <th>Budget</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Total</th>
+            <th>Action</th>
+            <th>Status</th>
+        </tr>
+      </thead>
+        <tbody>
+            <tr *ngFor="let id = index ;let budget of budget_array[id-1].items">
+              <td>{{ id+1 }}</td>
+              <td>{{ budget.goods }}</td>    
+              <td>{{ budget.quantity}}</td>  
+              <td>{{ budget.price}}</td>  
+              <td>{{ budget.price * budget.quantity}}</td>  
+               <td><button class="btn btn-success" style="margin: auto;" (click)="edit(id)" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                           <button class="btn btn-outline-danger" (click)="delete(id)">Delete</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                          <!-- <button class="btn btn-outline-warning" routerLink="budget/{{id+1}}">View</button> -->
+                           <!-- <button class="btn btn-outline-warning" routerLink="budget/{{id+1}}">View</button>  -->
                         </td>  
                         
                         <td>
@@ -120,15 +120,11 @@
                           <span class="ms-2" *ngIf="budget.status == true">Purchased</span>
                           <span class="ms-2" *ngIf="budget.status != true">Not-Purchased</span>
                         </td>
-                        
-                    <tr>
-                </tbody>
-
-                <button class="btn btn-outline-success" routerLink="/details">View Category</button>
-    <button class="btn btn-outline-success" routerLink="/homes">Add Category</button>
-            </table>
-        </div>
-    </div>
+                
+            <tr>
+        </tbody>
+    </table>
+  </div>
     
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
