@@ -49,7 +49,7 @@ validate(control: AbstractControl): {[key: string]: any} | null {
   public message = '';
   ngOnInit(): void {
   this.usersArray = this.budgetService.getUsers();
-  if(!this.budgetService.getUsers()){
+  if(this.budgetService.getUsers()){
     this.usersArray = this.budgetService.getUsers();
   }else{
     this.usersArray = [];
